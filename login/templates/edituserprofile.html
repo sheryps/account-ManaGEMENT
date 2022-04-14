@@ -1,0 +1,43 @@
+{% extends 'user.html' %}
+{% block content %}
+<body>
+    <head>
+        {% load static %}
+        <title>
+            USER
+        </title>
+    </head>
+    <body>
+        {% for message in messages%}
+    <h5>
+        <div class="'alert alert-danger mt-5" style="width:20%;font-size: 20px;">
+            {{ message }}
+        </div>
+        {% endfor %}
+    <div class="row" style="text-align:center">
+        <div class="col-md-2">
+            <a class="active" href="viewprofile?id={{user1.id}}"><button type="button" class="btn btn-info" style="height:50px;width:50%">Back</button></a>  
+        </div>
+        <div class="col-md-8" style="background-color:antiquewhite">
+            <h2 style="margin-top:5%;text-align: center;">EDIT DETAILS</h2> 
+            <form method="post" action="edituserprofile?id={{user1.id}}" enctype="multipart/form-data">
+                {% csrf_token %}       
+                <input type="hidden" name="id" value="{{user1.id}}">
+                <input type="text" name="fname" class='form-control w-25' placeholder="Enter First Name"style="margin-left:35%;text-align:center" value="{{user1.user.first_name}}"><br>
+                <input type="text" name="lname" class='form-control w-25' placeholder="Enter Last Name"style="margin-left:35%;text-align:center" value="{{user1.user.last_name}}"><br>
+                <input type="text" name="mob" class='form-control w-25' placeholder="Enter Mobile Number"style="margin-left:35%;text-align:center" value="{{user1.phone}}"><br>
+                <input type="text" name="add" class='form-control w-25' placeholder="Enter Address"style="margin-left:35%;text-align:center" value="{{user1.Address}}"><br>
+                <p>
+                    {% if user1.image == '/static/image/default.jpg' %}
+                    <img src="{% static 'images/staff.png' %}" width="100">
+                    {% else %}
+                    <img src="{{user1.image.url }}" width="100">
+                    {% endif %}
+                </p><br>               
+                <input type="file" name="img" class='form-control w-25' accept="image/*" style="margin-left:35%;text-align:center">
+                <button type="submit" class='btn' style="margin-top:30px;font-size: 20px;width:20%;background-color: deeppink;margin-bottom:40px">CONFIRM</button><br>
+            </form>
+        </div>
+    </div>
+</body>
+{% endblock %}

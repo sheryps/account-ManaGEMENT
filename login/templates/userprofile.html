@@ -1,0 +1,38 @@
+{% extends 'user.html' %}
+{% block content %}
+<head>
+    <title>
+        USER
+    </title>
+</head>
+<body>
+    {% for message in messages%}
+<h5>
+    <div class="'alert alert-danger mt-5" style="width:20%;font-size: 20px;">
+        {{ message }}
+    </div>
+    {% endfor %}
+<div class="row" style="margin-left:20%">
+    <div class="col-md-8" style="background-color:antiquewhite">
+        <h2 style="margin-top:5%;text-align: center;margin-bottom: 5px;">ADD DETAILS</h2> 
+        <form method="post" action="profile?id={{profile.id}}" enctype="multipart/form-data">
+            {% csrf_token %}       
+            <input type="hidden" name="id" value="{{profile.id}}">
+            <input type="text" name="fname" class='form-control w-50' placeholder="Enter First Name"style="margin-left:30%;text-align:center"><br>
+            <input type="text" name="lname" class='form-control w-50' placeholder="Enter Last Name"style="margin-left:30%;text-align:center"><br>
+            <input type="text" name="mob" class='form-control w-50' placeholder="Enter Mobile Number"style="margin-left:30%;text-align:center"><br>
+            <input type="text" name="address" class='form-control w-50' placeholder="Enter Address"style="margin-left:30%;text-align:center"><br>
+            <input type="date" name="dob" class='form-control w-50' placeholder="Enter DOB"style="margin-left:30%;text-align:center"><br>
+            <select class="form-control w-50" name="under" style="margin-left:30%;text-align:center;margin-bottom: 20px;"><br>
+               {% for i in ug %} 
+                <option value="{{ i.id }}">{{ i.UG}}</option>
+               {% endfor %}
+            </select>
+            <input type="text" name="mark" class='form-control w-50' placeholder="Enter Percentage"style="margin-left:30%;text-align:center"><br>
+            <input type="file" class="form-control w-50" name="file" accept="image/*" style="margin-left:30%;text-align:center">
+            <button type="submit" class='btn' style="margin-left: 38%;margin-top:30px;font-size: 20px;width:20%;background-color: deeppink;margin-bottom:40px">CONFIRM</button><br>
+        </form>
+    </div>
+</div>
+</body>
+{% endblock %}

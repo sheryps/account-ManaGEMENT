@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    .vert ul {
+    list-style-type: none;
+    margin-top: 0;
+    padding: 0;
+    width: 15%;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 30%;
+    overflow: auto;
+  }
+  
+  .vert li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  
+  .vert li a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+  
+  .vert li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+  footer {  
+         background: rgb(9, 95, 234);  
+          color: white;  
+          margin-top:100px;  
+        }  
+        footer a {  
+          color: #fff;  
+          font-size: 14px;  
+          transition-duration: 0.2s;  
+        }  
+        footer a:hover {  
+          color: #FA944B;  
+          text-decoration: none;  
+        }  
+        .copy {  
+          font-size: 12px;  
+          padding: 10px;  
+          border-top: 1px solid #FFFFFF;  
+        }  
+        .footer-middle {  
+          padding-top: 2em;  
+          color: white;  
+        }  
+        ul.social-network {  
+          list-style: none;  
+          display: inline;  
+          margin-left: 0 !important;  
+          padding: 0;  
+        }  
+        ul.social-network li {  
+          display: inline;  
+          margin: 0 5px;  
+        }  
+          
+        .social-network a.icoFacebook:hover {  
+          background-color: #3B5998;  
+        }  
+        .social-network a.icoLinkedin:hover {  
+          background-color: #007bb7;  
+        }  
+        .social-network a.icoFacebook:hover i  
+        {  
+          color: #fff;  
+        }  
+        .social-network a.icoLinkedin:hover i {  
+          color: #fff;  
+        }  
+        .social-network a.socialIcon:hover {  
+          color: #44BCDD;  
+        }  
+        .socialHoverClass {  
+          color: #44BCDD;  
+        }  
+        .social-circle li a {  
+          display: inline-block;  
+          position: relative;  
+          margin: 0 auto 0 auto;  
+          -moz-border-radius: 50%;  
+          -webkit-border-radius: 50%;  
+          border-radius: 50%;  
+          text-align: center;  
+          width: 30px;  
+          height: 30px;  
+          font-size: 15px;  
+        }  
+        .social-circle li i {  
+          margin: 0;  
+          line-height: 30px;  
+          text-align: center;  
+        }  
+        .social-circle li a:hover i  
+        {  
+          -moz-transform: rotate(360deg);  
+          -webkit-transform: rotate(360deg);  
+          -ms--transform: rotate(360deg);  
+          transform: rotate(360deg);  
+          -webkit-transition: all 0.2s;  
+          -moz-transition: all 0.2s;  
+          -o-transition: all 0.2s;  
+          -ms-transition: all 0.2s;  
+          transition: all 0.2s;  
+        }  
+        .triggeredHover {  
+          -moz-transform: rotate(360deg);  
+          -webkit-transform: rotate(360deg);  
+          -ms--transform: rotate(360deg);  
+          transform: rotate(360deg);  
+          -webkit-transition: all 0.2s;  
+          -moz-transition: all 0.2s;  
+          -o-transition: all 0.2s;  
+          -ms-transition: all 0.2s;  
+          transition: all 0.2s;  
+        }  
+        .social-circle i {  
+          color: #595959;  
+          -webkit-transition: all 0.8s;  
+          -moz-transition: all 0.8s;  
+          -o-transition: all 0.8s;  
+          -ms-transition: all 0.8s;  
+          transition: all 0.8s;  
+        }  
+        .social-network a {  
+          background-color: #F9F9F9;  
+        }  
+        .social-network a:hover {  
+        background: #ff304d;  
+        }  
+  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Required meta tags -->
+     <meta charset="utf-8">
+     {% load static %}
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+     <!--===============================================================================================-->
+       <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+     <!--===============================================================================================-->
+       <link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+     <!--===============================================================================================-->
+       <link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+     <!--===============================================================================================-->	
+       <link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+     <!--===============================================================================================-->
+       <link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+     <!--===============================================================================================-->
+       <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+       <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    </head>
+    <body>
+    
+        <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+            <a class="navbar-brand" href="admin_homepage">Admin Panel</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="admin_homepage">Home <span class="sr-only">(current)</span></a>
+                </li>          
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Contact <span class="sr-only">(current)</span></a>
+              </li>
+            </ul>  
+              <li class="nav-item dropdown" style="margin-right:60px">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="https://secure.titlecompanywebdesign.com/allhomestitle/wp-content/uploads/sites/49/2016/08/staff-default.png" width="50"></a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="change-password/">Change Password</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="user_logout">Logout</a>
+              </div>
+              </li>
+            </div>
+        </nav>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        {% block content %}
+
+        {% endblock %}   
+        
+    </body>  
+</html>  

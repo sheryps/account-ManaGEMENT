@@ -1,0 +1,36 @@
+{% extends 'user.html' %}
+{% block content %}
+<head>
+    <title>
+      STAFF LEAVE
+    </title>
+  </head>
+  <body>
+    <li>
+      <a href="homepage"><button type="button" class="btn btn-primary" style="height:50px;width:10%;margin-bottom:20px">BACK</button></a>
+    </li>
+    <h2 style="text-align:center">LEAVE MANAGEMENT</h2>
+    <div class="row">
+
+      <table class="table container" style="width:50%">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Leave Date</th>
+              <th scope="col">Leave Reason</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+              {% for i in view %}
+            <tr>
+              <td>{{i.reasondate}}</td>
+              <td>{{i.reason.leavereason}}</td>
+              <td>{{i.status}}</td>
+
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>    
+  </body>
+{% endblock %}

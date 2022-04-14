@@ -1,0 +1,9 @@
+body{
+    background-color: blanchedalmond;
+}
+button{
+    background-color: deepskyblue;
+}
+button:hover{
+    background-color: indianred;
+}

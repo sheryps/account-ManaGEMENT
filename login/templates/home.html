@@ -1,0 +1,112 @@
+{% extends 'user.html' %}
+{% block content %}
+<style>
+  .vert ul {
+  list-style-type: none;
+  margin-top: 0;
+  padding: 0;
+  width: 15%;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 30%;
+  overflow: auto;
+}
+
+.vert li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.vert li a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.vert li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+</style>
+<body >
+  <div class="row">
+    <div class="col-md-2" style="background-color:darkturquoise">
+      <ul>
+        {% for i in userr %}
+        <li>
+          <a href="viewprofile?id={{i.id}}"><button type="button" class="btn btn-warning" style="height:100px;width:100%;margin-bottom:20px">VIEW PROFILE</button></a>
+        </li>
+        <li>
+          <a href="leave?id={{i.id}}"><button type="button" class="btn btn-primary" style="height:100px;width:100%;margin-bottom:20px">APPLY LEAVE</button></a>
+        </li> 
+        <li>
+          <a href="viewleave?id={{i.id}}"><button type="button" class="btn btn-secondary" style="height:100px;width:100%;margin-bottom:20px">LEAVE</button></a>
+        </li>  
+        <li>
+          <a href="viewtask?id={{i.id}}"><button type="button" class="btn btn-danger" style="height:80px;width:100%;">TASK</button></a>
+        </li> 
+        {% endfor %} 
+      </ul>> 
+    </div>
+    <div class="col-md-10" style="background-image:url('https://cdn.wallpapersafari.com/71/46/eImU2L.png');background-repeat: no-repeat;background-size: cover;" width="300">
+        {% for i in userr %}
+        <h2 style="text-align:center;padding-bottom:20px;color:white">Welcome to Your Account {{i.username}}</h2>        
+        {% endfor %}  
+        {% for message in messages%}
+        <h5>
+            <div class="'alert alert-danger mt-5" style="width:50%;">
+                {{ message }}
+            </div>  
+        {% endfor %}     
+    </div>
+  </div>
+  <footer class="mainfooter" role="contentinfo">  
+    <div class="footer-middle">  
+    <div class="container">  
+      <div class="row">  
+        <div class="col-md-3 col-sm-6">  
+          <div class="footer-pad">  
+            <h4> DETAILS</h4>  
+            <ul class="list-unstyled">  
+              <li> <a href="#"> </a> </li>  
+              <li> <a href="#">Payment Center</a></li>  
+              <li> <a href="#"> Contact Directory </a></li>  
+              <li> <a href="#">Forms</a></li>  
+              <li> <a href="#">News and Updates</a></li>  
+              <li> <a href="#">FAQs</a></li>  
+            </ul>  
+          </div>  
+        </div>  
+        <div class="col-md-3 col-sm-6">  
+          <div class="footer-pad">  
+            <h4> INFO</h4>  
+            <ul class="list-unstyled">  
+              <li><a href="#"> Blog </a> </li>  
+              <li><a href="#">Accessibility</a> </li>  
+              <li><a href="#">Disclaimer</a></li>  
+              <li><a href="#">Privacy Policy</a></li>  
+              <li><a href="#">FAQs</a></li>  
+              <li><a href="#">Webmaster</a></li>  
+            </ul>  
+          </div>  
+        </div>  
+          <div class="col-md-3">  
+              <h4> Follow Us </h4>  
+              <ul class="social-network social-circle">  
+               <li> <a href="https://www.facebook.com/?msclkid=3cf8eaddbaf611eca035c1eab1ad1450" class="icoFacebook" title="Facebook"> <i class="fa fa-facebook"> </i> </a> </li>  
+               <li> <a href="https://in.linkedin.com/nhome/?msclkid=5bc31c96baf611ecb7e8de4b709028e9" class="icoLinkedin" title="Linkedin"> <i class="fa fa-linkedin"> </i> </a> </li>  
+      <li> <a href="https://www.youtube.com/"> <i class="fa fa-youtube" aria-hidden="true"> </i> </a> </li>  
+              </ul>               
+      </div>  
+      </div>  
+      <div class="row">  
+      <div class="col-md-12 copy">  
+      <p class="text-center"> © Copyright 2021 - Company Name.  All rights reserved. </p>  
+      </div>  
+      </div>  
+    </div>  
+    </div>  
+  </footer>
+</body>
+{% endblock %}

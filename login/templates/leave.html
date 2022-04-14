@@ -1,0 +1,29 @@
+{% extends 'user.html' %}
+{% block content %}
+<li>
+    <a href="homepage"><button type="button" class="btn btn-primary" style="height:50px;width:10%;margin-bottom:20px">BACK</button></a>
+  </li>
+<div class="leaveform" style="background-color:darkcyan;width:50%;margin-left:30%">
+    <form method="post" action="insertleave?id={{user.id}}">
+        {% csrf_token %}
+        <input type="hidden" name="id" value="{{user.id}}">
+        <h2 style="text-align:center;padding-top: 20px;">Employee Leave Form</h2>
+        <h5 style="margin-top:20px;text-align:center">Leave Date<input type="date" name="start" class='form-control w-25' placeholder="Enter Date" style="margin-left:38%"></h5><br>
+        <h5 style="margin-left:44%">Reason</h5>
+        <select class="form-control w-25 " name="sel" style="margin-left:38%" ><br>
+            {% for reason in reasons %} 
+             <option value="{{ reason.id }}">{{ reason.leavereason}}</option>
+            {% endfor %}
+         </select>
+        <div class="container-login100-form-btn" style="width:30%;margin-left: 35%;">
+            <button type="submit" class="login100-form-btn">
+                SUBMIT
+            </button>
+        </div>
+
+    </form> 
+    
+
+</div>
+
+{% endblock %}

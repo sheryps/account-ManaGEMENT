@@ -1,0 +1,19 @@
+{% extends 'admin.html' %}
+{% block content %}
+<div class="leaveform" style="background-color:darkcyan;width:50%;margin-left:30%">
+    <form method="post" action="updatedate?id={{ex.id}}">
+        {% csrf_token %}
+        <input type="hidden" name="id" value="{{ex.id}}">
+        <h2 style="text-align:center;padding-top: 20px;">Extend Date</h2>   
+        <h5 style="margin-top:20px;text-align:center">Last Date<input type="date" name="end" class='form-control w-25' placeholder="Enter Last Date" style="margin-left:38%"></h5><br>       
+        <div class="container-login100-form-btn" style="width:30%;margin-left: 35%;">
+            <button type="submit" class="login100-form-btn">
+                SUBMIT
+            </button>
+        </div>
+
+    </form> 
+    
+
+</div>
+{% endblock %}

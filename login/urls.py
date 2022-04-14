@@ -1,0 +1,46 @@
+from django.urls import path
+from . import views 
+from .views import password_reset_request,password_reset_confirm
+from django.contrib import admin
+from django.contrib.auth import views as auth_views
+urlpatterns = [
+    #path('',views.prof,name='prof'),
+    path('',views.user_login, name='user_login' ),
+    path('homepage',views.homepage),
+    path('user_login',views.user_login),
+    path('user_logout',views.user_logout),
+    path('addprofile',views.addprofile,name='addprofile'),
+    path('profile',views.profile,name='profile'),
+    path('viewprofile',views.viewprofile,name='viewprofile'),
+    path('leave',views.leave,name='leave'),
+    path('insertleave',views.insertleave,name='insertleave'),
+    path('viewleave',views.viewleave,name='viewleave'),
+    path('updateprofile',views.updateprofile),
+    path('edituserprofile',views.edituserprofile),
+    path('admin_homepage',views.admin_homepage),
+    path('user_edit',views.user_edit),
+    path('user_block',views.user_block),
+    path('user_delete',views.user_delete),
+    path('user_update',views.user_update),
+    path('user_add',views.user_add),
+    #path('admin_logout',views.admin_logout),
+    path('searched',views.searched,name='searched'),
+    path('leavemanager',views.leavemanager),
+    path('approve',views.approve),
+    path('reject',views.reject),
+    path('taskassign',views.taskassign),
+    path('updatetask',views.updatetask),
+    path('taskmanager',views.taskmanager),
+    # path('formlogin',views.formlogin),
+    path('viewtask',views.viewtask),
+    path('complete',views.complete),
+    path('extend',views.extend),
+    path('updatedate',views.updatedate),
+    path('signup',views.signup),
+    path('change-password/',views.change_password, name = 'change-password'),
+    path("password_reset/", password_reset_request, name="reset_password"),
+    path('reset/<uidb64>/<token>/', password_reset_confirm, name='password_reset_confirm'),
+    path('password_reset/done/', auth_views.PasswordResetDoneView.as_view(template_name='password_reset_done.html'), name='password_reset_done'),
+    path('reset/done/', auth_views.PasswordResetCompleteView.as_view(template_name='password_reset_complete.html'), name='password_reset_complete'),
+
+]
